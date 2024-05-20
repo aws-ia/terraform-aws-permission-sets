@@ -1,0 +1,25 @@
+{
+  "Name": "ViewOnlyAccess",
+  "Comment": "Sample permission set to provide view only access for auditors",
+  "Description": "View only access for all accounts",
+  "SessionDuration": "PT4H",
+  "ManagedPolicies": [
+    "arn:aws:iam::aws:policy/job-function/ViewOnlyAccess"
+  ],
+  "CustomerPolicies": [],
+  "CustomPolicy": {},
+  "PermissionBoundary": {
+    "ManagedPolicy": "",
+    "CustomerPolicy": ""
+  },
+  "Assignments": [
+    {
+      "all_accounts": true,
+      "principal": "AuditorsGroup",
+      "type": "GROUP",
+      "account_id": [],
+      "account_ou": [],
+      "account_tag": []
+    }
+  ]
+}
