@@ -13,9 +13,11 @@ Ensure that you have an instance of IAM Identity Center set up and enabled acros
 
 ## Usage
 
-Create a directory to store your JSON file templates, which will include the Permission Set definitions (name, policies, assignments, etc.). When using this module, make sure to specify the path to this folder in the `templates_path` variable.
+Make sure you are logged in the AWS account where the IAM Identity Center is deployed or in the delegated administrator account.
 
-Templates directory structure sample:
+Create a directory to store your JSON file templates, which will include the Permission Set definitions (name, policies, assignments, etc.). When using this module, you should specify the path to this folder in the `templates_path` variable.
+
+Templates directory structure sample (e.g. **templates**):
 
 ```tree
 templates
@@ -56,7 +58,7 @@ Permission Set template sample (e.g. **my-permission-set.json**):
 }
 ```
 
-Next, you can call the module, specifying the AWS provider and the region where IAM Identity Center is deployed:
+Next, you can call the module, specifying the AWS provider and the IAM Identity Center region (e.g. **us-east-1**):
 
 ```hcl
 provider "aws" {
@@ -69,8 +71,6 @@ module "aws_permission_sets" {
   tags           = var.tags
 }
 ```
-
-[Note] Make sure you are logged in the AWS account.
 
 ## JSON file templates
 
