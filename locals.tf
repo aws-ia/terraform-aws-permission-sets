@@ -46,11 +46,11 @@ locals {
   }
 
   ps_groups = distinct(flatten([for data in local.ps_data :
-    [for item in data.Assignments : { "Name" = lookup(item, "principal") } if item.type == "GROUP"]
+    [for item in data.Assignments : { "Name" = item["principal"] } if item.type == "GROUP"]
   ]))
 
   ps_users = distinct(flatten([for data in local.ps_data :
-    [for item in data.Assignments : { "Name" = lookup(item, "principal") } if item.type == "USER"]
+    [for item in data.Assignments : { "Name" = item["principal"] } if item.type == "USER"]
   ]))
 
   org_accounts = [
@@ -79,8 +79,8 @@ locals {
             ]])
           )) : {
           "permission_set" : data.Name
-          "principal_id" : lookup(assignment, "principal")
-          "principal_type" : lookup(assignment, "type")
+          "principal_id" : assignment["principal"]
+          "principal_type" : assignment["type"]
           "account_id" : account
         }
       ]

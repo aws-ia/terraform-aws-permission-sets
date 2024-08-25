@@ -5,7 +5,8 @@
 #####################################################################################
 
 module "aws_permission_sets" {
-  source = "git@github.com:aws-ia/terraform-aws-permission-sets.git"
+  # source = "git@github.com:aws-ia/terraform-aws-permission-sets.git"
+  source = "../.."
 
   templates_path = "./templates"
   tags           = var.tags
