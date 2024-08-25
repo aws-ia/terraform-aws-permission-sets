@@ -5,7 +5,7 @@ Use this module to dynamic manage AWS IAM Identity Center Permission Sets using 
 
 ## Prerequisites
 
-You must have an instance of IAM Identity Center set up and enabled across the organization. See [Enabling AWS IAM Identity Center](https://docs.aws.amazon.com/singlesignon/latest/userguide/get-set-up-for-idc.html) documentation. It's strongly recommended to use an IAM Identity Center administrator delegated account to manage Permissions Sets. See [Delegated administration](https://docs.aws.amazon.com/singlesignon/latest/userguide/delegated-admin.html) for more.
+Ensure that you have an instance of IAM Identity Center set up and enabled across your organization. For detailed guidance, refer to the [Enabling AWS IAM Identity Center](https://docs.aws.amazon.com/singlesignon/latest/userguide/get-set-up-for-idc.html) documentation. It is highly recommended to use an IAM Identity Center administrator delegated account for managing Permission Sets. For more information, see [Delegated administration](https://docs.aws.amazon.com/singlesignon/latest/userguide/delegated-admin.html).
 
 1. AWS account and credentials
 2. Terraform set up
@@ -13,9 +13,9 @@ You must have an instance of IAM Identity Center set up and enabled across the o
 
 ## JSON file templates
 
-Create a folder to store your JSON file templates, these will contain the Permission Set definitions (name, policies, assignments, etc). This folder should be informed in the variable `templates_path` when you call this module.
+Create a folder to store your JSON file templates, which will include the Permission Set definitions (name, policies, assignments, etc.). When using this module, make sure to specify the path to this folder in the `templates_path` variable.
 
-See the JSON schema for Permission Set definitions:
+See the JSON schema for Permission Set templates:
 
 ```json
 {
