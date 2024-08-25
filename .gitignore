@@ -44,3 +44,6 @@ go.sum
 
 # Terraform tests 
 tests/*.auto.tfvars
+
+.Trash-*
+.DS_Store

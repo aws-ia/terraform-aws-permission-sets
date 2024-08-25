@@ -12,6 +12,9 @@
     "ManagedPolicy": "",
     "CustomerPolicy": ""
   },
+  "Tags": {
+    "Teams": "CloudOps"
+  },
   "Assignments": [
     {
       "all_accounts": true,

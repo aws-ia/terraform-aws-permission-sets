@@ -8,7 +8,7 @@ resource "aws_ssoadmin_permission_set" "permission_set" {
   description      = each.value.Description
   instance_arn     = local.sso_instance_arn
   session_duration = try(each.value.SessionDuration, "PT1H")
-  tags             = var.tags
+  tags             = merge(var.tags, lookup(each.value, "Tags", {}))
 }
 
 resource "aws_ssoadmin_permission_set_inline_policy" "inline_policy" {
