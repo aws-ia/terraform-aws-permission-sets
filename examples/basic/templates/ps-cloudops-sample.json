@@ -1,0 +1,28 @@
+{
+  "Name": "CloudOpsAccess",
+  "Comment": "Sample permission set for cloud operation team",
+  "Description": "Cloud Operation team access in all accounts",
+  "SessionDuration": "PT1H",
+  "ManagedPolicies": [
+    "arn:aws:iam::aws:policy/AdministratorAccess"
+  ],
+  "CustomerPolicies": [],
+  "CustomPolicy": {},
+  "PermissionBoundary": {
+    "ManagedPolicy": "",
+    "CustomerPolicy": ""
+  },
+  "Tags": {
+    "Teams": "CloudOps"
+  },
+  "Assignments": [
+    {
+      "all_accounts": true,
+      "principal": "CloudOpsGroup",
+      "type": "GROUP",
+      "account_id": [],
+      "account_ou": [],
+      "account_tag": []
+    }
+  ]
+}

@@ -3,7 +3,7 @@ plan.out
 plan.out.json
 
 # Local .terraform directories
-**/.terraform/*
+**/.terraform/
 
 # .tfstate files
 *.tfstate
@@ -44,3 +44,6 @@ go.sum
 
 # Terraform tests 
 tests/*.auto.tfvars
+
+.Trash-*
+.DS_Store
