@@ -65,7 +65,7 @@ provider "aws" {
   region = "{{ region }}"
 }
 module "aws_permission_sets" {
-  source = "aws-ia/terraform-aws-permission-sets/aws"
+  source = "aws-ia/permission-sets/aws"
 
   templates_path = "./templates"
   tags           = var.tags
