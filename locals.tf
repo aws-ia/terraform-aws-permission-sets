@@ -54,12 +54,12 @@ locals {
   ]))
 
   org_accounts = [
-    for acc in data.aws_organizations_organizational_unit_descendant_accounts.org_accounts.accounts[*] : acc.id if acc.id != data.aws_organizations_organization.org.master_account_id
+    for acc in data.aws_organizations_organizational_unit_descendant_accounts.org_accounts.accounts[*] : acc.id if acc.status == "ACTIVE" && acc.id != data.aws_organizations_organization.org.master_account_id
   ]
 
   org_ou_accounts = {
     for ou in local.ps_ou_list : ou => flatten([
-      data.aws_organizations_organizational_unit_descendant_accounts.accounts_per_ou[ou].accounts[*].id
+      for acc in data.aws_organizations_organizational_unit_descendant_accounts.accounts_per_ou[ou].accounts[*] : acc.id if acc.status == "ACTIVE"
     ])
   }
 
