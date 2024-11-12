@@ -3,7 +3,7 @@
 
 locals {
   sso_instance_arn = tolist(data.aws_ssoadmin_instances.sso.arns)[0]
-  ps_files         = fileset(var.templates_path, "*.json")
+  ps_files         = fileset(var.templates_path, "**/*.json")
   ps_data          = [for f in local.ps_files : jsondecode(file("${var.templates_path}/${f}"))]
   ps_definition    = zipmap([for data in local.ps_data : data.Name], local.ps_data)
 
