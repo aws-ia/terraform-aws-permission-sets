@@ -7,6 +7,7 @@ resource "aws_ssoadmin_permission_set" "permission_set" {
   name             = each.value.Name
   description      = each.value.Description
   instance_arn     = local.sso_instance_arn
+  relay_state      = try(each.value.RelayState, null)
   session_duration = try(each.value.SessionDuration, "PT1H")
   tags             = merge(var.tags, lookup(each.value, "Tags", {}))
 }
